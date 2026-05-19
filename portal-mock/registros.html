@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Espelho de ponto — Portal Ponto Ágil</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="brand-header">
+      <h1>Portal Ponto Ágil</h1>
+      <p>Espelho de ponto — batidas do período</p>
+    </header>
+    <div class="layout">
+      <nav class="sidebar">
+        <a href="dashboard.html">Início</a>
+        <a href="registros.html" class="active" data-testid="nav-registros">Espelho de ponto</a>
+        <a href="#" id="logout-link">Sair</a>
+      </nav>
+      <main class="content">
+        <div class="card">
+          <h2>Espelho de ponto</h2>
+          <p class="hint">Registros exibidos: <strong id="record-count">0</strong></p>
+          <p id="load-error" class="error-msg" style="display: none">
+            Não foi possível carregar os registros.
+          </p>
+          <table data-testid="registros-table">
+            <thead>
+              <tr>
+                <th>Matrícula</th>
+                <th>Colaborador</th>
+                <th>Data</th>
+                <th>Entrada</th>
+                <th>Saída</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+    <script src="js/auth.js"></script>
+    <script src="js/registros.js"></script>
+    <script>
+      if (!window.PortalAuth.requireAuth()) {
+        throw new Error("Não autenticado");
+      }
+      document.getElementById("logout-link").addEventListener("click", function (e) {
+        e.preventDefault();
+        window.PortalAuth.logout();
+      });
+    </script>
+  </body>
+</html>

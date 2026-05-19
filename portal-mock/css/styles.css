@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
+  color: #1a2b3c;
+}
+
+.brand-header {
+  background: linear-gradient(135deg, #0d47a1, #1565c0);
+  color: #fff;
+  padding: 1rem 1.5rem;
+}
+
+.brand-header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.brand-header p {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.layout {
+  display: flex;
+  min-height: calc(100vh - 72px);
+}
+
+.sidebar {
+  width: 220px;
+  background: #fff;
+  border-right: 1px solid #d0dae4;
+  padding: 1rem 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: #1a2b3c;
+  text-decoration: none;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #e3f2fd;
+  color: #0d47a1;
+  font-weight: 600;
+}
+
+.content {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  max-width: 960px;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #e3f2fd 0%, #f0f4f8 50%);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #c5d0db;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button,
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.25rem;
+  background: #1565c0;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover,
+.btn:hover {
+  background: #0d47a1;
+}
+
+.error-msg {
+  color: #c62828;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e7ef;
+}
+
+th {
+  background: #f5f8fb;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #546e7a;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #607d8b;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — Portal Ponto Ágil</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="brand-header">
+      <h1>Portal Ponto Ágil</h1>
+      <p>Área do empregador — mock RPA</p>
+    </header>
+    <div class="layout">
+      <nav class="sidebar">
+        <a href="dashboard.html" class="active">Início</a>
+        <a href="registros.html" data-testid="nav-registros">Espelho de ponto</a>
+        <a href="#" id="logout-link">Sair</a>
+      </nav>
+      <main class="content">
+        <div class="card">
+          <h2>Bem-vindo</h2>
+          <p>Selecione <strong>Espelho de ponto</strong> no menu para consultar as batidas importáveis pelo RPA.</p>
+          <p class="hint">O robô Python navegará até essa tela e fará o scraping da tabela.</p>
+          <a class="btn" href="registros.html" data-testid="nav-registros-btn">Abrir espelho de ponto</a>
+        </div>
+      </main>
+    </div>
+    <script src="js/auth.js"></script>
+    <script>
+      if (!window.PortalAuth.requireAuth()) {
+        throw new Error("Não autenticado");
+      }
+      document.getElementById("logout-link").addEventListener("click", function (e) {
+        e.preventDefault();
+        window.PortalAuth.logout();
+      });
+    </script>
+  </body>
+</html>

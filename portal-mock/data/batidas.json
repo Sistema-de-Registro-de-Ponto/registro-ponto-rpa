@@ -1,0 +1,23 @@
+[
+  {
+    "employee_id": "001",
+    "employee_name": "Natanael",
+    "work_date": "2026-05-18",
+    "check_in": "08:00",
+    "check_out": "17:00"
+  },
+  {
+    "employee_id": "002",
+    "employee_name": "Maria Silva",
+    "work_date": "2026-05-18",
+    "check_in": "09:15",
+    "check_out": "18:30"
+  },
+  {
+    "employee_id": "001",
+    "employee_name": "Natanael",
+    "work_date": "2026-05-17",
+    "check_in": "08:05",
+    "check_out": "16:55"
+  }
+]

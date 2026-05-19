@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login — Portal Ponto Ágil</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="login-page">
+    <div class="card login-card">
+      <div class="brand-header" style="border-radius: 8px 8px 0 0; margin: -1.5rem -1.5rem 1.5rem">
+        <h1>Portal Ponto Ágil</h1>
+        <p>Mock para demonstração do RPA</p>
+      </div>
+      <h2>Acesso ao sistema</h2>
+      <p class="hint">Credenciais de teste: <strong>demo</strong> / <strong>demo123</strong></p>
+      <p id="login-error" class="error-msg" data-testid="login-error">Usuário ou senha inválidos.</p>
+      <form id="login-form">
+        <label for="username">Usuário</label>
+        <input
+          id="username"
+          name="username"
+          type="text"
+          autocomplete="username"
+          data-testid="login-username"
+          required
+        />
+        <label for="password">Senha</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autocomplete="current-password"
+          data-testid="login-password"
+          required
+        />
+        <button type="submit" data-testid="login-submit">Entrar</button>
+      </form>
+    </div>
+    <script src="js/auth.js"></script>
+    <script>
+      document.getElementById("login-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const user = document.getElementById("username").value.trim();
+        const pass = document.getElementById("password").value;
+        if (window.PortalAuth.login(user, pass)) {
+          window.location.href = "dashboard.html";
+        } else {
+          document.getElementById("login-error").style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>
