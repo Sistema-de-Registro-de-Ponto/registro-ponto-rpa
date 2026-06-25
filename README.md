@@ -2,6 +2,16 @@
 
 Automação RPA em Python que simula o acesso ao **Portal Ponto Ágil** (site externo de registro de ponto), faz **web scraping** das batidas e envia os dados para o `registro-ponto-backend`. O gestor visualiza as importações no **Flutter Web** (`registro-ponto-frontend` → aba **RPA**).
 
+### Arquitetura
+
+```mermaid
+flowchart LR
+    PORTAL[Portal Ponto Agil] --> PW[Playwright]
+    PW --> RPA[Python Pipeline]
+    RPA -->|POST /v1/rpa/imports| API[Spring Boot]
+    UI[Flutter Gestor] -->|GET rpa/records| API
+```
+
 Este repositório faz parte do teste técnico **Sistema de Registro de Ponto** (Player Contabilidade), junto com:
 
 | Repositório | Papel |
